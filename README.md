@@ -1,6 +1,4 @@
-## AmazonSignIn project:
 
-```markdown
 # AmazonSignIn
 
 This repository contains a Selenium-based automation framework for testing the Amazon Sign-In page using TestNG and Allure for reporting.
@@ -133,7 +131,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Contact
 
 Abdul Firoz Khan - [GitHub](https://github.com/Abdul-Firoz-Khan)
-
 ```
 
 You can adjust and expand the sections as necessary to fit the specifics and future updates of your project.
