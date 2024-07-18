@@ -7,6 +7,7 @@ import io.qameta.allure.Step;
 
 public class SignInPage extends I1 {
     WebDriver driver;
+    boolean status;
 
     SignInPage(WebDriver driver) {
         this.driver = driver;
@@ -14,7 +15,18 @@ public class SignInPage extends I1 {
 
     @Step("Creating a new account")
     void createAccount() {
-        driver.findElement(createAccount).click();
-        Allure.step("Clicked on Create Account");
+        status = driver.getPageSource().contains("Create your Amazon account");
+
+        Allure.step("Page contains 'Create your Amazon account': " + status);
+        System.out.println("Create your Amazon account status = " + status);
+
+        if (status) {
+            driver.findElement(createAccount).click();
+            Allure.step("Clicked on Create Account");
+
+        } else {
+            driver.findElement(conditionsOfUse).click();
+            Allure.step("Clicked on Conditions of Use");
+        }
     }
 }
