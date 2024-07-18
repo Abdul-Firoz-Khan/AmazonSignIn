@@ -8,6 +8,7 @@ import io.qameta.allure.Story;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -28,6 +29,14 @@ public class MasterPage extends I1 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         Allure.step("URL loaded successfully");
+    }
+
+    @AfterTest
+    @Step("Teardown")
+    void load_Teardown() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.quit();
+        Allure.step("Browser closed and resources cleaned up");
     }
 
     @Test
@@ -54,4 +63,3 @@ public class MasterPage extends I1 {
         Allure.step("Navigated to Sign In page and attempted to create a new account");
     }
 }
-
