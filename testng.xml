@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/lenovo/Documents/E/Testing/selenium-project/maven_project/TestNgFramework/src/test/java/com/afk/task/MasterPage.java">
+    <test verbose="2" preserve-order="true" name="MasterPage Tests">
         <classes>
             <class name="com.afk.task.MasterPage">
                 <methods>
